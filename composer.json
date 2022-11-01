@@ -1,5 +1,5 @@
 {
-  "name": "gissilali/laraconfig",
+  "name": "gissilali/per-user-settings",
   "description": "Per-user settings repository system for Laravel",
   "minimum-stability": "dev",
   "prefer-stable": true,
