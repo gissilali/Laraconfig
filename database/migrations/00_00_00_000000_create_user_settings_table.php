@@ -16,7 +16,7 @@ class CreateUserSettingsTable extends Migration
         Schema::create('user_settings', static function (Blueprint $table): void {
             $table->id();
 
-            $table->string('metadata_id');
+            $table->unsignedBigInteger('metadata_id');
 
             // You can change this morph column to suit your needs, like using `uuidMorphs()`.
             // $table->uuidMorphs('settable');
