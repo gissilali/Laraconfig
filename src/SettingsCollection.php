@@ -58,7 +58,7 @@ class SettingsCollection extends Collection
      *
      * @return \Illuminate\Support\Carbon|\Illuminate\Support\Collection|array|string|int|float|bool|null
      */
-    public function value(string $name, mixed $default = null): Carbon|Collection|array|string|int|float|bool|null
+    public function value($name,  $default = null)
     {
         $setting = $this->get($name, $default);
 
@@ -99,7 +99,7 @@ class SettingsCollection extends Collection
         }
 
         foreach ($name as $key => $setting) {
-            if (! $instance = $this->get($key)) {
+            if (!$instance = $this->get($key)) {
                 throw new RuntimeException("The setting [$key] doesn't exist.");
             }
 
@@ -152,7 +152,7 @@ class SettingsCollection extends Collection
      */
     public function isDisabled(string $name): bool
     {
-        return ! $this->isEnabled($name);
+        return !$this->isEnabled($name);
     }
 
     /**
@@ -229,7 +229,7 @@ class SettingsCollection extends Collection
     {
         if ($keys instanceof Enumerable) {
             $keys = $keys->all();
-        } elseif (! is_array($keys)) {
+        } elseif (!is_array($keys)) {
             $keys = func_get_args();
         }
 
